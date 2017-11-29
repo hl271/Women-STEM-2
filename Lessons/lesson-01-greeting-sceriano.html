@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Greetings</title>
+</head>
+<body>
+	<button id="btnGreeting">Greet me please!</button>
+	<script>
+		var btnGreeting = document.getElementById('btnGreeting');
+		btnGreeting.addEventListener('click', function(){
+				var a= prompt('So tell me what\'s your name?');
+				!isNaN(a) ? alert('Sorry but I don\'t get it') : greets();
+
+				function greets() {
+								document.write('Xin chao, ' + a + '!');
+						}
+
+		})
+
+	</script>
+</body>
+</html>
