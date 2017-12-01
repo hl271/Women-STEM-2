@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Array methods practice</title>
+</head>
+<body>
+<h2>JavaScript Array Methods</h2>
+
+<p id="demo"></p>
+
+<script>
+		var arr1 = [1,2,3];
+		var arr2 = [2,3];
+		var arr1Len = arr1.length;
+		var arr2Len = arr2.length;
+		var arrSum = [];
+		for (i = 0; i< arr1Len; i++) {
+				for (j = 0; j<arr2Len; j++) {
+						arrSum.push(''+arr1[i]+arr2[j]);
+				}
+		}
+		document.getElementById('demo').innerHTML = 'Cac so co the ket hop duoc la: ' + arrSum.join(', ');
+
+</script>
+
+
+</body>
+</html>

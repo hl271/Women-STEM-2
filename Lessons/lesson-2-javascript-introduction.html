@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Kiem tra nam nhuan</title>
+</head>
+<body>
+	
+	<script>
+			var nam = prompt('Moi ban nhap 1 nam bat ky \(SCN\)');
+			if (nam < 0 || isNaN(nam)) {
+			alert('Don\'t  try to hack!');
+			}
+			else {
+				if(nam %4 ===0) {
+				alert('Nam ban vua nhap la nam nhuan');
+				}
+				else {
+				var sodu = nam%4;
+				var a= nam - sodu;
+				var b= nam -sodu +4;
+				alert('Nam ban vua nhap khong phai nam nhuan. Hai nam nhuan gan nhat voi nam ' + nam+ ' la nam '+a+' va nam '+b );
+				}
+			}
+			
+
+	</script>
+</body>
+</html>
