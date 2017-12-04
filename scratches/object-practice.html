@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Object practice</title>
+</head>
+<body>
+<script>
+		function createPersonObject(personName, personAge, personHobby){
+				var person;
+				person = {
+						age : personAge,
+						name : personName,
+						hobby : personHobby
+				};
+				console.log('Hello, my name is '+person.name+'. I am '+person.age+ ' years old. My hobby is: '+person.hobby.join(', '));
+//		for (i = 0; i<person.hobby; i++){
+//			console.log(person.hobby[i]+', ');
+//		}
+		}
+		var movieDB = [
+				{
+						title: 'Frozen',
+						rating: 4.5,
+						hasWatched: true
+				},
+				{
+						title: 'Coco',
+						rating: 5,
+						hasWatched: true
+				},
+
+				{
+						title: 'Justice League',
+						rating: 3,
+						hasWatched: false
+				},
+				{
+						title: 'Avengers',
+						rating: 4,
+						hasWatched: false
+				}
+		];
+		function printData(movie){
+				if (!movie.hasWatched){
+						console.log('You haven\'t watched \''+movie.title+'\' - '+ movie.rating+' star');
+				}
+				else console.log('You have watched \''+movie.title+'\' - '+ movie.rating+' star');
+		}
+		movieDB.forEach(printData);
+</script>
+</body>
+</html>

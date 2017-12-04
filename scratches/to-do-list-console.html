@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>To do list (console)</title>
+</head>
+<body>
+	<h1>Simple To Do List</h1>
+	<strong>Instruction: </strong><p>Typing these following commands in the prompts</p>
+	<ul>
+		<li>Add: add a new item</li>
+		<li>List: view your full todo list</li>
+		<li>Delete: delete a specific item</li>
+		<li>Quit: quit your working spaces</li>
+	</ul>
+
+</body>
+<script>	
+	var command;
+	var todos = [];
+	function askCommand() {
+	command = prompt('Type your command:');
+	command = command.toUpperCase();	
+	}
+	askCommand();
+	while (command != 'QUIT') {
+		switch (command) {
+		case 'ADD':
+			var newToDo = prompt('Type your NEW to do:');
+			
+			if (todos.indexOf(newToDo) === -1) {
+				todos.push(newToDo);
+			}
+			else {alert('Sorry, your item is already exist');}			
+			break;
+		case 'LIST':
+			console.log('YOUR TO DO LIST:');
+			todos.forEach(function(todo, index) {
+			index +=1;
+			console.log(index + ': ' +todo);
+			});
+			
+			break;
+		case 'DELETE':
+			var deleteItem = prompt('Type in the item you want to DELETE');
+			var deleteItemIndex = todos.indexOf(deleteItem);
+			if (deleteItemIndex > -1){
+				todos.splice(deleteItemIndex, 1);
+			}
+			else {alert('Sorry, there is no item found!');}
+			break;
+			default: alert('Sorry, your command is not found! Please try again');
+		}
+		askCommand();
+	}
+	alert('You quit the app!');
+</script>
+</html>
