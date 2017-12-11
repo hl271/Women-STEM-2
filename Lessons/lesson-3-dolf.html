@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dolf function</title>
+</head>
+<body>
+	
+	<script>
+		function dolfElse(bln, func1, func2){
+			bln === true ? func1() : func2()
+		}
+		
+		dolfElse(
+		false, 
+		function(){alert ("SO you choose true")}, 
+		function(){alert('So you choose false')}
+		);
+
+	</script>
+</body>
+</html>

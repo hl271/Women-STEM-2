@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Swap value</title>
+</head>
+<body>
+	<h1>Swap value</h1>
+	<h3>Value 1: </h3><label id="value1"></label>
+	<h3>Value 2: </h3><label id="value2"></label><br/>
+	<input type="button" id="btnInput" value="Input"/>
+	<input type="button" id="btnSwap" value="Swap"/>
+	<script>
+		window.onload = function(){
+		var btnInput = document.querySelector('#btnInput');
+		var btnSwap = document.querySelector('#btnSwap');
+		var a, b;
+		btnInput.addEventListener('click', askAndPrintInput);
+		btnSwap.addEventListener('click', swapAndPrintValue);
+		function askAndPrintInput(){
+			a= prompt('Value 1: '); 
+			b= prompt('Value 2: '); 
+			document.querySelector('#value1').innerHTML = a;
+			document.querySelector('#value2').innerHTML = b;
+		}
+		
+		function swapAndPrintValue(){
+			var n = a;
+			a= b;
+			b=n;
+			document.querySelector('#value1').innerHTML = a;
+			document.querySelector('#value2').innerHTML = b;
+		}
+		}
+		
+
+	</script>
+</body>
+</html>

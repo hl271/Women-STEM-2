@@ -6,18 +6,19 @@
 </head>
 <body>
 <script>
-		function createPersonObject(personName, personAge, personHobby){
+		function createPersonObject(personName, personAge, personHobby) {
 				var person;
 				person = {
-						age : personAge,
-						name : personName,
-						hobby : personHobby
+						age: personAge,
+						name: personName,
+						hobby: personHobby
 				};
-				console.log('Hello, my name is '+person.name+'. I am '+person.age+ ' years old. My hobby is: '+person.hobby.join(', '));
+				console.log('Hello, my name is ' + person.name + '. I am ' + person.age + ' years old. My hobby is: ' + person.hobby.join(', '));
 //		for (i = 0; i<person.hobby; i++){
 //			console.log(person.hobby[i]+', ');
 //		}
 		}
+
 		var movieDB = [
 				{
 						title: 'Frozen',
@@ -41,12 +42,14 @@
 						hasWatched: false
 				}
 		];
-		function printData(movie){
-				if (!movie.hasWatched){
-						console.log('You haven\'t watched \''+movie.title+'\' - '+ movie.rating+' star');
+
+		function printData(movie) {
+				if (!movie.hasWatched) {
+						console.log('You haven\'t watched \'' + movie.title + '\' - ' + movie.rating + ' star');
 				}
-				else console.log('You have watched \''+movie.title+'\' - '+ movie.rating+' star');
+				else console.log('You have watched \'' + movie.title + '\' - ' + movie.rating + ' star');
 		}
+
 		movieDB.forEach(printData);
 </script>
 </body>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Function practice</title>
+</head>
+<body>
+<script>
+	//Task 1
+	function askPuppyName() {
+			return prompt('Your puppy name: ')
+	}
+	function askPuppyAge(){
+			return prompt('Your puppy age: ')
+	}
+
+	function calcRealAge(age){return age*7}
+	console.log(calcRealAge(3), 21);
+	console.log(calcRealAge(1), 7);
+
+	//Task 2
+	console.log('Siri is waking up...');
+	setTimeout(function(){
+			let name = siriAskName();
+			let age = siriAskAge();
+			console.log('Woa! So my master '+name+' has lived for '+toMinuteAge(age)+' minutes');
+	}, 1000);
+	function siriAskName(){
+			return prompt('Sorry, I forgot your name master. Type your name: ');
+	}
+	function siriAskAge(){
+			return prompt('And your age too <3: ');
+	}
+	function toMinuteAge(a){
+			const DAYS_IN_A_YEAR = 365;
+			const HOURS_IN_A_DAY = 24;
+			return a*DAYS_IN_A_YEAR*HOURS_IN_A_DAY*60;'
+	}
+
+
+
+</script>
+</body>
+</html>

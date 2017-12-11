@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style>
+			textarea {
+			margin-top: 10px;
+			}
+		</style>
+  </head>
+  <body>
+		<center>
+			<h2>Fake typing</h2>
+			<textarea onkeydown=changeTyping();  placeholder="Type something to get a fascinating fact!" cols=40 rows=6></textarea>
+		</center>
+	<script>
+		var text = 'HELLO! YOU KNOW LAN, RIGHT? SHE IS SO BEAUTIFUL, CHARMING, FUNNY AND INTELLIGENT, IS SHE NOT? OF COURSE SHE IS <3';
+		var textArray= [];
+		var textArea= document.querySelector('textarea');
+		var n= '';
+		function convertToLetter(){
+			for (i=0; i<text.length; i++){
+			textArray.push(text.charAt(i));
+			}
+		}			
+		convertToLetter();	
+
+		function changeTyping(){
+			
+			t = textArea.value;
+			j = t.length;
+			if (j >0){
+				for (var i=0; i<j; i++){
+					n+= textArray[i];
+					if(i === textArray.length)
+					{
+							textArea.value = "";
+							n = "";
+					}
+				}
+			}
+			textArea.value = n;
+			n= "";
+			setTimeout("changeTyping()", 1000);
+		}
+	</script>
+  </body>
+</html>

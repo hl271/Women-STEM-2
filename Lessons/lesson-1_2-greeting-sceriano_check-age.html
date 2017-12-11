@@ -8,16 +8,17 @@
 	<button id="btnGreeting">Greet me please!</button>
 	<script>
 		var btnGreeting = document.getElementById('btnGreeting');
-		btnGreeting.addEventListener('click', function(){
+		btnGreeting.addEventListener('click', greet);
+		function greet(){
 				var a= prompt('So tell me what\'s your name?');
 				var b=prompt('And what about your age? Don\'t try to hack because it is of no use :>');
 				!isNaN(a) || isNaN(b) ? alert('You are trying to hack, are you not?') : greets();
 				function greets() {
 
-								document.write('Xin chao, ' + a + '! Ban da song ' + b+ ' nam tuoi doi roi do!' );
-						}
+						document.write('Xin chao, ' + a + '! Ban da song ' + b+ ' nam tuoi doi roi do!' );
+				}
 
-		})
+		}
 
 	</script>
 </body>
