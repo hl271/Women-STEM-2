@@ -5,6 +5,7 @@
 	<title>Object practice</title>
 </head>
 <body>
+<button>Click</button>
 <script>
 		function createPersonObject(personName, personAge, personHobby) {
 				var person;
@@ -51,6 +52,43 @@
 		}
 
 		movieDB.forEach(printData);
+
+		function Person(firstName, lastName, hobbys) {
+				this.firstName = firstName;
+				this.lastName = lastName;
+				this.greeting = function(){
+						console.log('Hello '+ this.firstName +' '+ this.lastName);
+
+				};
+				this.hobbys = hobbys;
+				this.printHobby = function(){
+						this.hobbys.forEach(function(hobby){
+								console.log(this.firstName + ' loves ' + hobby);
+						});
+				}
+		}
+		
+		function Creature (){
+		
+		}
+		Creature.prototype.speak = function(){console.log('I am living now')}
+		Person.prototype = Object.create(Creature.prototype);
+		Person.prototype.gender = 'male';
+		Person.prototype.living = 'earth';
+		let lan = new Person('lan', 'dang', ['surfing', 'reading books', 'listening to music'])
+		let mai = {
+				_proto_: Object.create(Person.prototype),
+				hobbys: ['punching', 'laughing', 'taking shower for 1 hour'],
+				printHobby: function(){
+						let obj = this;
+						this.hobbys.forEach(function(hobby){
+								console.log(obj.nickName + ' loves '+ hobby);
+						});
+				}
+		}
+		
+		
+		
 </script>
 </body>
 </html>
