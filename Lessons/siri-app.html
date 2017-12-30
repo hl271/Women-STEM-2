@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Siri App</title>	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+		.display {width: 40%; margin: 30px auto; padding-bottom: 20px; border: 2px dashed black;}
+	</style>
+</head>
+<body>
+	
+	<div class="text-center display">
+		<h1>Siri App</h1>
+		<p>All you need to wake me up is to press the button below, master!</p>
+		<button class="btn btn-primary" id="btnStart">Start Siri</button>
+		<button class="btn btn-danger disabled" id="btnSignIn">Sign In</button>
+	</div>
+	<h2 class="text-center" id="presentUser"><i>You are not signed in now master...</i></h2>
+	<script src="validate-personal-info.js"></script>
+	<script>
+		let startBtn = $('#btnStart');
+		let signInBtn = $('#btnSignIn');
+		let presentUser = $('#presentUser');
+		let name, age, password;
+		let signInPermission = false;
+		startBtn.click(startApp);
+		signInBtn.click(signIn);
+		function startApp(){
+				name = askName();
+				age = askAge();
+				password= askPassword();
+				if (!validString(name) || !validAge(age)){return alert('Don\'t trick me!');}
+				else {switchSignInState(true)}
+		}
+
+		function switchSignInState (state){
+				if (!state){
+						signInBtn.addClass('disabled');
+						signInPermission = false;
+				}
+				else if (state) {
+						signInBtn.removeClass('disabled');
+						signInPermission  = true;
+				}
+		}
+
+
+		function signIn(){
+
+				if (signIn) {
+						let checkName = askName();
+						let checkPassword = askPassword();
+						if (checkName ===name && checkPassword === password) {
+								presentUser.text('Hello Master ' + name);
+								switchSignInState(false);
+						}
+						else {
+								return alert('Your combination is wrong! Try again')
+						}
+				}
+
+		}
+		function askName(){
+			return prompt('What is your name?');
+		}
+		function askAge(){
+			return prompt('What is your age?');
+		}
+		function askPassword(){
+			return prompt('Type in your password');
+		}
+	</script>
+</body>
+</html>

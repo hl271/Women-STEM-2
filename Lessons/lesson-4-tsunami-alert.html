@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Tsunami alert</title>
+  <script src='libs/assert.js'></script>
+  <script>
+    // your scripts here
+		function determine(distance, velocity){
+			if(distance>0 && distance <=100) return 'RED';
+			else if (distance >0 && distance<=200) {
+				if (velocity <=50 && velocity >0) return 'CAM';
+				else if (velocity > 50) return 'RED';
+			} 
+			else return 'you are in safe condition';
+		}
+  </script>
+</head>
+<body>
+  <script>
+    testRedAlertTsunami();
+		testCamAlertTsunami();
+		
+		function testRedAlertTsunami(){
+		assertEquals(determine(70, 30), 'RED', 'tsunami in the distance of 70km and has velocity 30km/h - RED ALERT');
+		assertEquals(determine(150, 80), 'RED', 'tsunami in the distance of 150km and has velocity 80km/h - RED ALERT');
+		}
+		function testCamAlertTsunami(){		
+		assertEquals(determine(150, 50), 'CAM', 'tsunami in the distance of 150km and has velocity 50km/h - CAM ALERT');
+		assertEquals(determine(110, 45), 'CAM', 'tsunami in the distance of 110km and has velocity 45km/h - CAM ALERT');
+		}
+
+  </script>
+</body>
+</html>
